@@ -1,9 +1,13 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-type Props = {};
+import { PageInfo } from "@/typings";
+import { urlFor } from "@/sanity";
+type Props = {
+    pageInfo: PageInfo;
+};
 
-const About = (props: Props) => {
+const About = ({ pageInfo }: Props) => {
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -30,7 +34,7 @@ const About = (props: Props) => {
                     className='relative md:mb-0 flex shrink-0 w-48 h-48 rounded-full object-cover md:rounded-lg md:w-64 md:h-64 lg:w-[400px] lg:h-[400px] overflow-hidden scale-125'
                 >
                     <Image
-                        src={"/image.png"}
+                        src={urlFor(pageInfo.heroImage).url() || "/image.png"}
                         fill
                         alt='Bhammar Bharat '
                         className='md:mb-0 flex shrink-0 w-48 h-48 rounded-full object-cover md:rounded-lg md:w-64 md:h-64 lg:w-[400px] lg:h-[400px] overflow-hidden scale-125'
@@ -44,22 +48,8 @@ const About = (props: Props) => {
                         </span>{" "}
                         background
                     </h4>
-                    <p className='text-xs md:text-sm lg:text-base text-center'>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Sed consequuntur omnis ullam consequatur placeat dolorum
-                        deleniti, fugiat aliquam enim officiis totam quasi
-                        molestiae maiores sunt reprehenderit eius nulla! Dolorum
-                        rerum quidem laboriosam ipsam aliquam cupiditate
-                        commodi, assumenda perferendis sit incidunt eum, nihil
-                        corporis deleniti placeat tempora possimus totam?
-                        Laborum, hic? Lorem ipsum dolor sit amet consectetur,
-                        adipisicing elit. Laboriosam alias, facere non nesciunt
-                        eaque dolorum officia! Delectus quasi unde praesentium
-                        reiciendis itaque quae nisi sequi voluptatem animi,
-                        natus facere vitae iure aperiam labore maiores culpa
-                        minus optio iusto, voluptatum vero voluptas laudantium
-                        velit consectetur obcaecati. Suscipit iusto dolor cumque
-                        corporis.
+                    <p className='text-xs md:text-sm lg:text-base text-center md:text-left'>
+                        {pageInfo?.backgroundInformation}
                     </p>
                 </div>
             </div>

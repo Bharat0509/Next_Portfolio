@@ -1,14 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
+import { urlFor } from "@/sanity";
+import { Project } from "@/typings";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Skill from "./Skill";
 
-type Props = {};
+type Props = {
+    projects: Project[];
+};
 
-const projects = [1, 2, 3, 4, 5];
-
-function Projects({}: Props) {
+function Projects({ projects }: Props) {
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -21,21 +24,24 @@ function Projects({}: Props) {
             </h3>
 
             <div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#f7AB0A]/80 '>
-                {projects.map((project, ind) => (
+                {projects.map((project: Project, ind) => (
                     <div
-                        key={ind}
-                        className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen'
+                        key={project._id}
+                        className='md:mt-24 w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen'
                     >
-                        <motion.img
+                        <motion.div
                             initial={{ y: -300, opacity: 0 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1.2 }}
                             viewport={{ once: true }}
-                            src='https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/Android_Larger_Screens_2880x1200.jpg'
-                            height={"600"}
-                            width={"600"}
-                            alt='ShopSwift'
-                        />
+                        >
+                            <Image
+                                src={urlFor(project.Image.asset._ref).url()}
+                                height={"600"}
+                                width={"600"}
+                                alt='ShopSwift'
+                            />
+                        </motion.div>
                         <div className='space-y-10 px-0 md:px-1 max-w-6xl'>
                             <h4 className='text-2xl font-semibold text-center'>
                                 <span
@@ -44,18 +50,24 @@ function Projects({}: Props) {
                                 >
                                     Project {ind + 1} of {projects.length} :
                                 </span>{" "}
-                                ShopSwift
+                                {project.title}
                             </h4>
-                            <p className='text-sm md:text-lg text-center md:text-left'>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Alias molestias magni ratione
-                                nemo beatae porro repudiandae dicta magnam
-                                voluptatum officiis suscipit ab, quis sunt
-                                doloribus, modi voluptatem. Et cupiditate
-                                pariatur voluptatem neque molestiae architecto,
-                                ut autem animi enim unde tempora sapiente
-                                numquam placeat nulla obcaecati! Fugiat dolor
-                                blanditiis mollitia enim!
+                            <div className='flex items-center space-x-2 justify-center'>
+                                {project?.technologies?.map((tech) => (
+                                    <div
+                                        key={tech._id}
+                                        className='relative h-10 w-10'
+                                    >
+                                        <Image
+                                            src={urlFor(tech.image).url()}
+                                            alt={tech.title}
+                                            fill
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                            <p className='md:w-[50vw] mx-auto text-sm md:text-lg text-center md:text-left'>
+                                {project.summary}
                             </p>
                         </div>
                     </div>
