@@ -8,9 +8,9 @@ import { PageInfo } from "@/typings";
 import { userInfo } from "os";
 import { urlFor } from "@/sanity";
 type Props = {
-    // pageInfo: PageInfo;
+    pageInfo: PageInfo;
 };
-const Hero = ({}: Props) => {
+const Hero = ({ pageInfo }: Props) => {
     const [text, count] = useTypewriter({
         words: [
             "Hi,The Names bharat",
