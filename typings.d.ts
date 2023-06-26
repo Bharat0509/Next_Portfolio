@@ -1,8 +1,8 @@
 interface SanityBody {
-    _createdAt: string;
-    _id: string;
-    _rev: string;
-    _updatedAt: string;
+    _createdAt?: string;
+    _id?: string;
+    _rev?: string;
+    _updatedAt?: string;
 }
 interface Image {
     _type: "image";
@@ -12,15 +12,15 @@ interface Image {
     };
 }
 export interface PageInfo extends SanityBody {
-    _type: "pageInfo";
-    address: string;
-    backgroundInformation: string;
-    email: string;
-    role: string;
-    heroImage: Image;
-    name: string;
-    phoneNum: string;
-    profilePic: Image;
+    _type?: "pageInfo";
+    address?: string;
+    backgroundInformation?: string;
+    email?: string;
+    role?: string;
+    heroImage?: Image;
+    name?: string;
+    phoneNum?: string;
+    profilePic?: Image;
     img?: string;
 }
 
