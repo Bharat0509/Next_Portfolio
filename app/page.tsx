@@ -17,9 +17,8 @@ import { fetchPageInfo } from "@/utils/fetchPageInfo";
 import { fetchProjects } from "@/utils/fetchProjects";
 import { fetchSkillSet } from "@/utils/fetchSkillSet";
 import { fetchSocials } from "@/utils/fetchSocials";
-import { log } from "console";
 import Link from "next/link";
-export const revalidate = 10;
+export const revalidate = 600;
 export default async function Home() {
     const pageInfo = await fetchPageInfo();
     const socials = await fetchSocials();
