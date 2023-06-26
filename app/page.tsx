@@ -14,7 +14,7 @@ import { fetchSocials } from "@/utils/fetchSocials";
 import Link from "next/link";
 export const revalidate = 600;
 export default async function Home() {
-    // const pageInfo = await fetchPageInfo();
+    const pageInfo = await fetchPageInfo();
     // const socials = await fetchSocials();
     // const education = await fetchEducation();
     // const skillsSet = await fetchSkillSet();
@@ -25,7 +25,7 @@ export default async function Home() {
             {/* <Header socials={socials} /> */}
             <h4>Hi there</h4>
             <section id='hero' className='snap-center'>
-                {/* <Hero pageInfo={pageInfo} /> */}
+                <Hero pageInfo={pageInfo} />
             </section>
 
             <section id='about' className='snap-center'>

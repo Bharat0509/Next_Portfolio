@@ -8,7 +8,7 @@ export const fetchPageInfo = async () => {
 
     const data = await res.json();
     const pageInfo: PageInfo = data;
-    let imgUrl = await urlFor(pageInfo.heroImage).url();
+    let imgUrl = urlFor(pageInfo.heroImage).url();
     pageInfo.img = imgUrl;
     return pageInfo;
 };
