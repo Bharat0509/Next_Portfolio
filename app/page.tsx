@@ -14,7 +14,7 @@ import { fetchSocials } from "@/utils/fetchSocials";
 import Link from "next/link";
 export const revalidate = 600;
 export default async function Home() {
-    // const pageInfo = await fetchPageInfo();
+    const pageInfo = await fetchPageInfo();
     // const socials = await fetchSocials();
     // const education = await fetchEducation();
     // const skillsSet = await fetchSkillSet();
@@ -22,7 +22,7 @@ export default async function Home() {
 
     return (
         <main className='h-screen bg-[rgb(36,36,36)] text-white snap-y snap-mandatory overflow-scroll z-0 scroll-smooth overflow-x-hidden scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#f7AB0A]/80 '>
-            <Header />
+            <Header pageInfo={pageInfo} />
             <section id='hero' className='snap-center'>
                 <Hero />
             </section>
