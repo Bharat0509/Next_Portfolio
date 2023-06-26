@@ -3,7 +3,7 @@ import { PageInfo, Skill } from "@/typings";
 
 export const fetchPageInfo = async () => {
     const res = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/getPageInfo`
+        `https://next-portfolio-o1lvkfe7z-bharat0509.vercel.app/api/getPageInfo`
     );
 
     const data = await res.json();
