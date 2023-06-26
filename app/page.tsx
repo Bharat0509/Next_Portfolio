@@ -1,3 +1,4 @@
+"use client";
 import About from "@/components/About";
 import ContactMe from "@/components/ContactMe";
 import Education from "@/components/Education";
@@ -5,13 +6,6 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
-import {
-    Education as EducationInfo,
-    PageInfo,
-    Project,
-    Skill,
-    Social,
-} from "@/typings";
 import { fetchEducation } from "@/utils/fetchEducations";
 import { fetchPageInfo } from "@/utils/fetchPageInfo";
 import { fetchProjects } from "@/utils/fetchProjects";
