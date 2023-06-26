@@ -8,12 +8,12 @@ import { PageInfo } from "@/typings";
 import { userInfo } from "os";
 import { urlFor } from "@/sanity";
 type Props = {
-    pageInfo: PageInfo;
+    // pageInfo: PageInfo;
 };
-const Hero = ({ pageInfo }: Props) => {
+const Hero = ({}: Props) => {
     const [text, count] = useTypewriter({
         words: [
-            `Hi,The Name's ${pageInfo?.name}`,
+            "Hi,The Names bharat",
             "FullStackDeveloper.tsx",
             "<LovesToCodeMore/>",
         ],
@@ -34,7 +34,7 @@ const Hero = ({ pageInfo }: Props) => {
             </div>
             <div className='z-20'>
                 <h2 className='text-sm uppercase text-gray-600 pb-2 tracking-[15px]'>
-                    {pageInfo?.role}
+                    {/* {pageInfo?.role} */}
                 </h2>
 
                 <h1 className='text-3xl lg:text-4xl font-semibold mx-auto w-[88%]'>

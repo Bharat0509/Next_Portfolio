@@ -6,9 +6,9 @@ import Link from "next/link";
 import { Social } from "@/typings";
 import { fetchSocials } from "@/utils/fetchSocials";
 type Props = {
-    socials: Social[];
+    // socials: Social[];
 };
-const Header = ({ socials }: Props) => {
+const Header = ({}: Props) => {
     try {
         return (
             <header className='sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center'>
@@ -28,14 +28,14 @@ const Header = ({ socials }: Props) => {
                     }}
                     className='flex flex-row items-center'
                 >
-                    {socials?.map((social) => (
+                    {/* {socials?.map((social) => (
                         <SocialIcon
                             key={social._id}
                             url={social.url}
                             fgColor='gray'
                             bgColor='transparent'
                         />
-                    ))}
+                    ))} */}
                 </motion.div>
                 <motion.div
                     initial={{
