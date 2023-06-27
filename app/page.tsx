@@ -1,4 +1,3 @@
-"use client";
 import About from "@/components/About";
 import ContactMe from "@/components/ContactMe";
 import Education from "@/components/Education";
@@ -15,33 +14,33 @@ import Link from "next/link";
 export const revalidate = 600;
 export default async function Home() {
     const pageInfo = await fetchPageInfo();
-    // const socials = await fetchSocials();
-    // const education = await fetchEducation();
-    // const skillsSet = await fetchSkillSet();
-    // const projects = await fetchProjects();
+    const socials = await fetchSocials();
+    const education = await fetchEducation();
+    const skillsSet = await fetchSkillSet();
+    const projects = await fetchProjects();
 
     return (
         <main className='h-screen bg-[rgb(36,36,36)] text-white snap-y snap-mandatory overflow-scroll z-0 scroll-smooth overflow-x-hidden scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#f7AB0A]/80 '>
-            {/* <Header socials={socials} /> */}
-            <h4>Hi there</h4>
+            <Header socials={socials} />
+            {/* <h4>Hi there</h4> */}
             <section id='hero' className='snap-center'>
                 <Hero pageInfo={pageInfo} />
             </section>
 
             <section id='about' className='snap-center'>
-                {/* <About pageInfo={pageInfo} /> */}
+                <About pageInfo={pageInfo} />
             </section>
 
             <section id='education' className='snap-center'>
-                {/* <Education education={education} /> */}
+                <Education education={education} />
             </section>
 
             <section id='skills' className='snap-start'>
-                {/* <Skills skillsSet={skillsSet} /> */}
+                <Skills skillsSet={skillsSet} />
             </section>
 
             <section id='projects' className='snap-start'>
-                {/* <Projects projects={projects} /> */}
+                <Projects projects={projects} />
             </section>
             <section id='contact' className='snap-end'>
                 <ContactMe />

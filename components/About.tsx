@@ -33,12 +33,16 @@ const About = ({ pageInfo }: Props) => {
                     transition={{ duration: 1.2 }}
                     className='relative md:mb-0 flex shrink-0 w-48 h-48 rounded-full object-cover md:rounded-lg md:w-64 md:h-64 lg:w-[400px] lg:h-[400px] overflow-hidden scale-125'
                 >
-                    <Image
-                        src={urlFor(pageInfo.heroImage).url() || "/image.png"}
-                        fill
-                        alt='Bhammar Bharat '
-                        className='md:mb-0 flex shrink-0 w-48 h-48 rounded-full object-cover md:rounded-lg md:w-64 md:h-64 lg:w-[400px] lg:h-[400px] overflow-hidden scale-125'
-                    />
+                    {pageInfo && pageInfo.heroImage && (
+                        <Image
+                            src={
+                                urlFor(pageInfo.heroImage).url() || "/image.png"
+                            }
+                            fill
+                            alt='Bhammar Bharat '
+                            className='md:mb-0 flex shrink-0 w-48 h-48 rounded-full object-cover md:rounded-lg md:w-64 md:h-64 lg:w-[400px] lg:h-[400px] overflow-hidden scale-125'
+                        />
+                    )}
                 </motion.div>
                 <div className='space-y-10 px-0 md:px-10 mt-5 md:mt-10'>
                     <h4 className='text-2xl md:text-4xl font-semibold '>
