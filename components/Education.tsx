@@ -14,9 +14,11 @@ const Education = ({ education }: Props) => {
                 Education
             </h3>
             <div className='mt-24 my-28 md:mt-32 w-full flex space-x-5 overflow-x-scroll md:py-10 md:pt-20 lg:pt-32 snap-x snap-mandatory scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#f7AB0A]/80 '>
-                {education.map((ed) => (
-                    <EducationCard key={ed._id} details={ed} />
-                ))}
+                {education &&
+                    education[0] &&
+                    education.map((ed) => (
+                        <EducationCard key={ed._id} details={ed} />
+                    ))}
                 {/* <EducationCard /> */}
             </div>
         </div>
