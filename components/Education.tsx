@@ -4,7 +4,7 @@ import { Education } from "@/typings";
 import EducationCard from "./EducationCard";
 
 type Props = {
-    education: Education[];
+    education: Education[] | null;
 };
 
 const Education = ({ education }: Props) => {

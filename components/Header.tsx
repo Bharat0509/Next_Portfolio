@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Social } from "@/typings";
 import { fetchSocials } from "@/utils/fetchSocials";
 type Props = {
-    socials: Social[];
+    socials: Social[] | null;
 };
 const Header = ({ socials }: Props) => {
     try {

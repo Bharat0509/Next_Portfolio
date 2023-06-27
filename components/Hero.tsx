@@ -8,7 +8,7 @@ import { PageInfo } from "@/typings";
 import { userInfo } from "os";
 import { urlFor } from "@/sanity";
 type Props = {
-    pageInfo: PageInfo;
+    pageInfo: PageInfo | null;
 };
 const Hero = ({ pageInfo }: Props) => {
     const [text, count] = useTypewriter({

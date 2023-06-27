@@ -4,7 +4,7 @@ import { SkillSet } from "@/typings";
 import Skill from "./Skill";
 
 type Props = {
-    skillsSet: SkillSet[];
+    skillsSet: SkillSet[] | null;
 };
 
 const Skills = ({ skillsSet }: Props) => {

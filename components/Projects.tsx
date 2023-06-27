@@ -8,7 +8,7 @@ import Image from "next/image";
 import Skill from "./Skill";
 
 type Props = {
-    projects: Project[];
+    projects: Project[] | null;
 };
 
 function Projects({ projects }: Props) {
