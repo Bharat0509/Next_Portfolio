@@ -22,21 +22,23 @@ const Skills = ({ skillsSet }: Props) => {
                 Hover over a skill for current proficiency
             </h3>
             <div className='mt-24 my-28 md:mt-32 w-full flex space-x-5 overflow-x-scroll md:py-10 md:pt-20 lg:pt-32 snap-x snap-mandatory scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#f7AB0A]/80'>
-                {skillsSet.map((skillSet) => (
-                    <div
-                        className='flex flex-col rounded-lg items-center space-y-7 mt-10 flex-shrink-0 w-[400px] md:w-[500px] xl:w-[600px]  bg-[#363636] p-5 md:p-10 opacity-60 hover:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden pb-4 snap-center '
-                        key={skillSet._id}
-                    >
-                        <h3 className='font-bold text-[#f7AB0A]'>
-                            {skillSet.title}
-                        </h3>
-                        <div className='flex justify-between space-x-4'>
-                            {skillSet.skills.map((skill) => (
-                                <Skill key={skill._id} skill={skill} />
-                            ))}
+                {skillsSet &&
+                    skillsSet.map((skillSet) => (
+                        <div
+                            className='flex flex-col rounded-lg items-center space-y-7 mt-10 flex-shrink-0 w-[400px] md:w-[500px] xl:w-[600px]  bg-[#363636] p-5 md:p-10 opacity-60 hover:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden pb-4 snap-center '
+                            key={skillSet._id}
+                        >
+                            <h3 className='font-bold text-[#f7AB0A]'>
+                                {skillSet.title}
+                            </h3>
+                            <div className='flex justify-between space-x-4'>
+                                {skillSet &&
+                                    skillSet?.skills.map((skill) => (
+                                        <Skill key={skill._id} skill={skill} />
+                                    ))}
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
             </div>
         </motion.div>
     );
