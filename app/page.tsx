@@ -11,7 +11,7 @@ import { fetchProjects } from "@/utils/fetchProjects";
 import { fetchSkillSet } from "@/utils/fetchSkillSet";
 import { fetchSocials } from "@/utils/fetchSocials";
 import Link from "next/link";
-// export const revalidate = 30;
+export const revalidate = 0;
 export default async function Home() {
     const pageInfo = await fetchPageInfo();
     const socials = await fetchSocials();
