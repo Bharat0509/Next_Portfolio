@@ -34,6 +34,7 @@ const Header = ({ socials }: Props) => {
                             url={social.url}
                             fgColor='gray'
                             bgColor='transparent'
+                            className='hover:bg-white rounded-full'
                         />
                     ))}
                 </motion.div>

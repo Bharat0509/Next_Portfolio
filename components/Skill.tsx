@@ -12,11 +12,11 @@ const Skill = ({ skill }: Props) => {
         <div className='group relative flex cursor-pointer bg-[#F7AB0A]/10 rounded-full'>
             <motion.div
                 initial={{
-                    x: 200,
+                    y: 50,
                     opacity: 0,
                 }}
                 transition={{ duration: 1 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 className='rounded-full overflow-hidden border border-gray-500 object-cover h-14 w-14 
                 md:w-22 md:h-22 xl:h-28 xl:w-28 filter group-hover:grayscale transition duration-600 ease-in-out bg-[#F7AB0A]/5'
