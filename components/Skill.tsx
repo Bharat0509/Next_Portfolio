@@ -18,8 +18,8 @@ const Skill = ({ skill }: Props) => {
                 transition={{ duration: 1 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className='rounded-full overflow-hidden border border-gray-500 object-cover h-14 w-14 
-                md:w-22 md:h-22 xl:h-28 xl:w-28 filter group-hover:grayscale transition duration-600 ease-in-out bg-[#F7AB0A]/5'
+                className='rounded-full overflow-hidden border border-gray-500 object-cover h-12 w-12 
+                md:w-20 md:h-20 xl:h-24 xl:w-24 filter group-hover:grayscale transition duration-600 ease-in-out bg-[#F7AB0A]/5'
             >
                 {skill && skill.image && (
                     <Image
@@ -30,7 +30,7 @@ const Skill = ({ skill }: Props) => {
                     />
                 )}
             </motion.div>
-            <div className='absolute opacity-0 group-hover:opacity-80 transition duration-600 ease-in-out group-hover:bg-white h-14 w-14  md:w-22 md:h-22 xl:w-28 xl:h-28 rounded-full z-0'>
+            <div className='absolute opacity-0 group-hover:opacity-80 transition duration-600 ease-in-out group-hover:bg-white h-12 w-12  md:w-20 md:h-20 xl:w-24 xl:h-24 rounded-full z-0'>
                 <div className='flex items-center justify-center h-full'>
                     <p
                         className='md:text-3xl font-bold text-black opacity-100'

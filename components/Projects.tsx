@@ -38,12 +38,12 @@ function Projects({ projects }: Props) {
                             >
                                 <Image
                                     src={urlFor(project.Image.asset._ref).url()}
-                                    height={"600"}
-                                    width={"600"}
+                                    height={"400"}
+                                    width={"400"}
                                     alt='ShopSwift'
                                 />
                             </motion.div>
-                            <div className='space-y-10 px-0 md:px-1 max-w-6xl'>
+                            <div className='space-y-6 md:space-y-10 px-0 md:px-1 max-w-6xl'>
                                 <h4 className='text-2xl font-semibold text-center'>
                                     <span
                                         className='underline
@@ -57,7 +57,7 @@ function Projects({ projects }: Props) {
                                     {project?.technologies?.map((tech) => (
                                         <div
                                             key={tech._id}
-                                            className='relative h-10 w-10'
+                                            className='relative  h-6 w-6 md:h-10 md:w-10 '
                                         >
                                             <Image
                                                 src={urlFor(tech.image).url()}
@@ -67,7 +67,7 @@ function Projects({ projects }: Props) {
                                         </div>
                                     ))}
                                 </div>
-                                <p className='md:w-[50vw] mx-auto text-sm md:text-lg text-center md:text-left'>
+                                <p className='w-[90vw] md:w-[50vw] mx-auto  text-xs md:text-lg text-center md:text-left'>
                                     {project.summary}
                                 </p>
                             </div>

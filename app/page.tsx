@@ -10,6 +10,7 @@ import { fetchPageInfo } from "@/utils/fetchPageInfo";
 import { fetchProjects } from "@/utils/fetchProjects";
 import { fetchSkillSet } from "@/utils/fetchSkillSet";
 import { fetchSocials } from "@/utils/fetchSocials";
+import { log } from "console";
 import Link from "next/link";
 export const revalidate = 0;
 export default async function Home() {
@@ -18,6 +19,7 @@ export default async function Home() {
     const education = await fetchEducation();
     const skillsSet = await fetchSkillSet();
     const projects = await fetchProjects();
+    console.log(pageInfo);
 
     return (
         <main className='h-screen bg-[rgb(36,36,36)] text-white snap-y snap-mandatory overflow-scroll z-0 scroll-smooth overflow-x-hidden scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#f7AB0A]/80 '>
@@ -42,7 +44,7 @@ export default async function Home() {
             <section id='projects' className='snap-start'>
                 <Projects projects={projects} />
             </section>
-            <section id='contact' className='snap-end'>
+            <section id='contact' className='snap-start'>
                 <ContactMe />
             </section>
             <Link href={"#hero"}>

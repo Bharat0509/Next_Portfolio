@@ -9,7 +9,7 @@ type Props = {
 
 const EducationCard = ({ details }: Props) => {
     return (
-        <article className='flex flex-col rounded-lg items-center space-y-7 mt-10 flex-shrink-0 w-[400px] md:w-[500px] xl:w-[600px]  bg-[#363636] p-5 md:p-10 opacity-60 hover:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden pb-4 snap-center'>
+        <article className='flex flex-col rounded-lg items-center space-y-7 mt-10 flex-shrink-0 w-[350px]  md:w-[500px] xl:w-[600px]  bg-[#363636] p-5 md:p-10 opacity-60 hover:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden pb-4 snap-center'>
             <div className='px-0 md:px-10 mx-auto '>
                 <h4 className='text-xl font-light'>{details.company}</h4>
                 <p className='text-xl md:text-2xl font-bold mt-1 text-[#f7AB0A]'>
