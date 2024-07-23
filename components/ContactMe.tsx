@@ -50,11 +50,11 @@ const ContactMe = (props: Props) => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
-            className='flex flex-col relative overflow-hidden text-left  max-w-full  justify-evenly mx-auto items-center  px-10 md:px-10'
+            className='flex flex-col relative overflow-hidden text-left  max-w-full  justify-evenly mx-auto items-center  px-2 md:px-10'
         >
             <Title h2='Contact Me' useMotion />
 
-            <ConstraintedBox className='mt-20 flex flex-col relative overflow-hidden text-left  w-full  justify-evenly mx-auto items-center px-5 md:px-10 py-5'>
+            <ConstraintedBox className='mt-20 flex flex-col relative overflow-hidden text-left  w-full  justify-evenly mx-auto items-center px-2 md:px-10 py-5'>
                 <div className='flex w-full flex-col items-center md:flex-row gap-10'>
                     <motion.div
                         initial={{ opacity: 0, x: -200 }}

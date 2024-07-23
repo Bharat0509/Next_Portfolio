@@ -7,7 +7,7 @@ import ProjectItem from "./ProjectItem";
 const ProjectList = ({ projects }: Readonly<{ projects: Project[] }>) => {
     return (
         <Column className='w-full mt-16'>
-            <Row className='w-full gap-4 overflow-x-scroll no-scrollbar'>
+            <Row className='gap-4 p-4 w-screen overflow-scroll'>
                 {projects?.map((item, index) => {
                     return (
                         <ProjectItem

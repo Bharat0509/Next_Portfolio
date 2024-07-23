@@ -50,14 +50,14 @@ const Hero = ({ pageInfo }: Props) => {
     return (
         <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
             <div className='z-20'>
-                <h1 className='text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold mx-auto mb-4'>
+                <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold mx-auto mb-4'>
                     <span className='mr-3 text-center pt-20 md:mt-0'>
                         I am <span className='text-primary'>{text}</span>
                     </span>
                     <Cursor cursorColor='#00b171' />
                 </h1>
                 <BackgroundCircles />
-                <h2 className='text-sm uppercase my-4 text-white tracking-[10px] font-extralight'>
+                <h2 className='text-sm uppercase my-4 text-white tracking-tighter md:tracking-[10px] font-light'>
                     {pageInfo?.role ?? "Full Stack Developer"}
                 </h2>
             </div>

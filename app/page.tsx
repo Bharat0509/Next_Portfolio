@@ -3,8 +3,9 @@ import ContactMe from "@/components/ContactMe";
 import Experience from "@/components/Experience";
 import Hero from "@/components/Hero";
 import Skills from "@/components/Skills";
-import HomeSection3 from "@/components/home/Section3";
-import HomeSection5 from "@/components/home/Section5";
+import ScrollToTop from "@/components/common/ScrollToTop";
+import Education from "@/components/home/Section3";
+import Projects from "@/components/home/Section5";
 import { fetchEducation } from "@/utils/fetchEducations";
 import { fetchPageInfo } from "@/utils/fetchPageInfo";
 import { fetchProjects } from "@/utils/fetchProjects";
@@ -34,7 +35,7 @@ export default async function Home() {
             </section>
 
             <section id='education' className='snap-center'>
-                <HomeSection3 id='Education' />
+                <Education id='Education' />
             </section>
 
             <section id='skills' className='snap-start'>
@@ -42,19 +43,12 @@ export default async function Home() {
             </section>
 
             <section id='projects' className='snap-start'>
-                <HomeSection5 id='projects' />
+                <Projects id='projects' />
             </section>
             <section id='contact' className='snap-center'>
                 <ContactMe />
             </section>
-            <Link href={"#hero"}>
-                <footer className='sticky bottom-5 left-[50%] flex items-center justify-center mx-auto w-full cursor-pointer'>
-                    <div
-                        title='Go To Top'
-                        className=' flex items-center justify-center h-6 w-6 bg-orange-500 rounded-full grayscale hover:grayscale-0'
-                    />
-                </footer>
-            </Link>
+            <ScrollToTop />
         </main>
     );
 }

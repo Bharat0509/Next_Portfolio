@@ -11,7 +11,7 @@ const SkillItem = ({ data }: { data: SkillSet }) => {
     return (
         <CardBox className='p-4 items-center justify-start bg-[var(--textColor10)] w-full group'>
             <h3 className=' text-xs/none border-[2px] sm:text-sm/none font-medium relative border-white/[0.2] text-white hover:text-[var(--primaryColor)] px-4 py-2 rounded-full'>
-                <span className='hidden text-lg sm:block'>{data?.title}</span>
+                <span className='text-lg sm:block'>{data?.title}</span>
                 <span className='absolute inset-x-0 w-full mx-auto -bottom-px bg-gradient-to-r from-transparent via-[var(--primaryColor)] to-transparent  h-[2px]' />
             </h3>
 

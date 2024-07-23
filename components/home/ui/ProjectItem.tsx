@@ -16,14 +16,14 @@ import { useEffect } from "react";
 
 const ProjectItem = ({ project }: { project: Project }) => {
     return (
-        <CardBox className='min-w-[calc(100%-2rem)] sm:min-w-[25rem] md:min-w-[28rem] aspect-[3/5] max-h-[32rem] p-4 gap-8 items-center justify-between bg-[var(--textColor10)] group slide_in'>
+        <CardBox className='min-w-[calc(100%-1rem)] sm:min-w-[25rem] md:min-w-[28rem] aspect-[3/5] max-w-[30rem] max-h-[32rem] p-4 gap-8 items-center justify-between bg-[var(--textColor10)] group slide_in z-20'>
             <Column className='w-full items-center justify-start'>
                 <Link
                     href='https://github.com/Bharat0509'
                     target='_blank'
                     className=' text-xs/none sm:text-sm/none font-medium relative border-white/[0.2] text-white hover:text-[var(--primaryColor)] px-4 py-2 rounded-full mb-8'
                 >
-                    <span className='hidden text-lg sm:block'>
+                    <span className='text-lg md:text-xl sm:block'>
                         {project.title}
                     </span>
                     <span className='absolute inset-x-0 w-full mx-auto -bottom-px bg-gradient-to-r from-transparent via-[var(--primaryColor)] to-transparent  h-[2px]' />
@@ -57,7 +57,7 @@ const ProjectItem = ({ project }: { project: Project }) => {
                         </Link>
                     ) : null}
                 </Row>
-                <Row className='relative w-[20rem] h-[12rem] md:h-[14rem] md:w-[22rem] items-center object-cover justify-center'>
+                <Row className='relative w-[18rem] h-[12rem] md:h-[14rem] md:w-[22rem] items-center object-cover justify-center'>
                     <Image
                         src={urlFor(project.Image.asset._ref).url()}
                         alt={`project-${project.title}`}
@@ -231,7 +231,7 @@ const IconContainer = ({
     return (
         <div
             className={cn(
-                `h-12 w-12 rounded-full flex items-center justify-center bg-[rgba(248,248,248,0.01)]
+                `h-10 md:h-12 w-10 md:w-12 rounded-full flex items-center justify-center bg-[rgba(248,248,248,0.01)]
     shadow-[0px_0px_8px_0px_rgba(248,248,248,0.25)_inset,0px_32px_24px_-16px_rgba(0,0,0,0.40)]
     `,
                 className
