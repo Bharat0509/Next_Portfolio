@@ -53,6 +53,10 @@ export default function RootLayout({
 }) {
     return (
         <html lang='en'>
+            <meta
+                name='google-site-verification'
+                content='tTPhKz96r1hhQLemKLlEmTQQXJHoUJ-QnKs5bjCnUNU'
+            />
             <body
                 className={`${inter.className} bg-[var(--bgColor)] overflow-y-scroll overflow-x-hidden`}
             >
