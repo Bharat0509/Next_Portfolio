@@ -8,7 +8,7 @@ const query = groq`
 type Data = {
     pageInfo: PageInfo[];
 };
-
+export const revalidate = 0;
 export async function GET() {
     const pageInfo: PageInfo[] = await sanityClient.fetch(query);
     return NextResponse.json(pageInfo);

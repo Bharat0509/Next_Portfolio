@@ -3,6 +3,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { PageInfo } from "@/typings";
 import { urlFor } from "@/sanity";
+import { Title } from "./Title";
 type Props = {
     pageInfo: PageInfo | null;
 };
@@ -13,11 +14,9 @@ const About = ({ pageInfo }: Props) => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1.2 }}
-            className='flex flex-col relative h-screen text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly items-center mx-auto'
+            className='flex flex-col relative h-screen text-center md:text-left max-w-7xl px-10 justify-evenly items-center mx-auto'
         >
-            <h3 className='flex items-center justify-center absolute top-20 uppercase tracking-[20px] text-gray-500 text-2xl'>
-                About
-            </h3>
+            <Title h2='About' useMotion />
 
             <div className='flex flex-col md:flex-row items-center justify-center mt-32'>
                 <motion.div

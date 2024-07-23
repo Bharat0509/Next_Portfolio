@@ -1,16 +1,15 @@
 import About from "@/components/About";
 import ContactMe from "@/components/ContactMe";
-import Education from "@/components/Education";
-import Header from "@/components/Header";
+import Experience from "@/components/Experience";
 import Hero from "@/components/Hero";
-import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
+import HomeSection3 from "@/components/home/Section3";
+import HomeSection5 from "@/components/home/Section5";
 import { fetchEducation } from "@/utils/fetchEducations";
 import { fetchPageInfo } from "@/utils/fetchPageInfo";
 import { fetchProjects } from "@/utils/fetchProjects";
 import { fetchSkillSet } from "@/utils/fetchSkillSet";
 import { fetchSocials } from "@/utils/fetchSocials";
-import { log } from "console";
 import Link from "next/link";
 export const revalidate = 0;
 export default async function Home() {
@@ -19,12 +18,9 @@ export default async function Home() {
     const education = await fetchEducation();
     const skillsSet = await fetchSkillSet();
     const projects = await fetchProjects();
-    console.log(pageInfo);
 
     return (
-        <main className='h-screen bg-[rgb(36,36,36)] text-white snap-y snap-mandatory overflow-scroll z-0 scroll-smooth overflow-x-hidden scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#f7AB0A]/80 '>
-            <Header socials={socials} />
-            {/* <h4>Hi there</h4> */}
+        <main className="h-full w-full  bg-[url('/LooperGroup2.png')] bg-cover md:bg-contain">
             <section id='hero' className='snap-center'>
                 <Hero pageInfo={pageInfo} />
             </section>
@@ -33,8 +29,12 @@ export default async function Home() {
                 <About pageInfo={pageInfo} />
             </section>
 
+            <section id='experience' className='snap-start'>
+                <Experience />
+            </section>
+
             <section id='education' className='snap-center'>
-                <Education education={education} />
+                <HomeSection3 id='Education' />
             </section>
 
             <section id='skills' className='snap-start'>
@@ -42,9 +42,9 @@ export default async function Home() {
             </section>
 
             <section id='projects' className='snap-start'>
-                <Projects projects={projects} />
+                <HomeSection5 id='projects' />
             </section>
-            <section id='contact' className='snap-start'>
+            <section id='contact' className='snap-center'>
                 <ContactMe />
             </section>
             <Link href={"#hero"}>

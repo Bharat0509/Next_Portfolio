@@ -1,46 +1,189 @@
-"use client";
-import { motion } from "framer-motion";
+import ConstraintedBox from "@/components/core/ConstraintedBox";
+import GridBox from "@/components/core/GridBox";
+import ResponsiveBox from "@/components/core/ResponsiveBox";
 import { SkillSet } from "@/typings";
-import Skill from "./Skill";
+import { ISkillListItem, SkillLevel } from "@/types";
+import { Title } from "./Title";
+import SkillItem from "./home/ui/SkillItem";
 
 type Props = {
     skillsSet: SkillSet[] | null;
 };
-
+const skills: ISkillListItem[] = [
+    {
+        title: "Programming Languages",
+        items: [
+            {
+                title: "JavaScript",
+                level: SkillLevel.Expert,
+                icon: "/skills/javascript.svg",
+            },
+            {
+                title: "TypeScript",
+                level: SkillLevel.Intermediate,
+                icon: "/skills/typescript.svg",
+            },
+            {
+                title: "Dart",
+                level: SkillLevel.Expert,
+                icon: "/skills/dart.svg",
+            },
+        ],
+    },
+    {
+        title: "Frontend Development",
+        items: [
+            {
+                title: "Next.js",
+                level: SkillLevel.Expert,
+                icon: "/skills/nextjs.png",
+            },
+            {
+                title: "React.js",
+                level: SkillLevel.Expert,
+                icon: "/skills/react.svg",
+            },
+            {
+                title: "HTML",
+                level: SkillLevel.Expert,
+                icon: "/skills/html.svg",
+            },
+            {
+                title: "CSS",
+                level: SkillLevel.Intermediate,
+                icon: "/skills/css.svg",
+            },
+            {
+                title: "SASS",
+                level: SkillLevel.Intermediate,
+                icon: "/skills/sass.svg",
+            },
+            {
+                title: "Redux Toolkit",
+                level: SkillLevel.Expert,
+                icon: "/skills/redux.svg",
+            },
+        ],
+    },
+    {
+        title: "Backend Development",
+        items: [
+            {
+                title: "Node.js",
+                level: SkillLevel.Expert,
+                icon: "/skills/nodejs.svg",
+            },
+            {
+                title: "Express.js",
+                level: SkillLevel.Expert,
+                icon: "/skills/express.svg",
+            },
+            {
+                title: "Socket.io",
+                level: SkillLevel.Intermediate,
+                icon: "/skills/socket-io.png",
+            },
+            {
+                title: "Nest.js",
+                level: SkillLevel.Begginer,
+                icon: "/skills/nestjs.svg",
+            },
+        ],
+    },
+    {
+        title: "Mobile App Development",
+        items: [
+            {
+                title: "Flutter",
+                level: SkillLevel.Expert,
+                icon: "/skills/flutter.svg",
+            },
+            {
+                title: "GetX",
+                level: SkillLevel.Expert,
+                icon: "/skills/getx.png",
+            },
+        ],
+    },
+    {
+        title: "Database Management",
+        items: [
+            {
+                title: "MongoDB",
+                level: SkillLevel.Intermediate,
+                icon: "/skills/mongodb.svg",
+            },
+            {
+                title: "PostgreSQL",
+                level: SkillLevel.Intermediate,
+                icon: "/skills/postgresql.svg",
+            },
+            {
+                title: "MySQL",
+                level: SkillLevel.Begginer,
+                icon: "/skills/mysql.svg",
+            },
+        ],
+    },
+    {
+        title: "DevOps/VCS",
+        items: [
+            {
+                title: "Docker",
+                level: SkillLevel.Begginer,
+                icon: "/skills/docker.png",
+            },
+            {
+                title: "AWS",
+                level: SkillLevel.Intermediate,
+                icon: "/skills/aws.svg",
+            },
+            {
+                title: "Git",
+                level: SkillLevel.Expert,
+                icon: "/skills/git.svg",
+            },
+            {
+                title: "GitHub",
+                level: SkillLevel.Expert,
+                icon: "/skills/github.svg",
+            },
+        ],
+    },
+    {
+        title: "Miscellaneous",
+        items: [
+            {
+                title: "Firebase",
+                level: SkillLevel.Intermediate,
+                icon: "/skills/firebase.svg",
+            },
+            {
+                title: "Ubuntu",
+                level: SkillLevel.Intermediate,
+                icon: "/skills/ubuntu.png",
+            },
+        ],
+    },
+];
 const Skills = ({ skillsSet }: Props) => {
+    if (!skillsSet) return null;
     return (
-        <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.75 }}
-            className='flex flex-col relative overflow-hidden text-left md:flex-row max-w-full  justify-evenly mx-auto items-center h-screen px-6 md:px-10 py-5'
+        <ResponsiveBox
+            className=' min-h-[calc(100vh-5rem)] items-center justify-center'
+            id={"id"}
         >
-            <h3 className='absolute top-20 uppercase tracking-[20px] text-gray-500 text-2xl'>
-                Skills
-            </h3>
-            <h3 className='absolute top-32 uppercase tracking-[3px] text-gray-500 text-[.5rem] md:text-sm'>
-                Hover over a skill for current proficiency
-            </h3>
-            <div className='mt-28 md:mt-32 w-full md:my-28 flex space-x-5 overflow-x-scroll md:py-10 md:pt-20 lg:pt-32 snap-x snap-mandatory scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#f7AB0A]/80 pb-8'>
-                {/* {skillsSet &&
-                    skillsSet.map((skillSet) => ( */}
-                <div className='flex flex-col mx-auto rounded-lg  flex-wrap w-[90%] md:w-[75%] items-center space-y-7 mt-10 flex-shrink-0  bg-[#363636] p-2 md:p-10 opacity-60 hover:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden pb-4 snap-center '>
-                    <div className='flex flex-wrap items-center gap-4 p-2 md:p-4 pb-10'>
-                        {skillsSet &&
-                            skillsSet.map((skillset) =>
-                                skillset.skills.map((skill) => (
-                                    <Skill key={skill._id} skill={skill} />
-                                ))
-                            )}
-                        {/* {skillSet &&
-                                    skillSet?.skills.map((skill) => (
-                                        <Skill key={skill._id} skill={skill} />
-                                    ))} */}
-                    </div>
-                </div>
-                {/* } */}
-            </div>
-        </motion.div>
+            <Title h2='Skills' useMotion />
+            <ConstraintedBox className='p-4 w-full'>
+                <GridBox className='justify-items-center grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 md:grid-cols-2 mt-16'>
+                    {skillsSet?.map((skill, index) => {
+                        return (
+                            <SkillItem key={`skill-${index}`} data={skill} />
+                        );
+                    })}
+                </GridBox>
+            </ConstraintedBox>
+        </ResponsiveBox>
     );
 };
 export default Skills;
